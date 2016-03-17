@@ -29,10 +29,10 @@ angular.module('starter', ['ionic'])
 
   $scope.items = [
     {
-      titulo: 'Thoughts',
-      descricao: 'Today was a good day',
+      titulo: 'Comprar Leite',
+      descricao: 'Comprar 2 caixas de Leite Integral',
       periodo: '01/01/2001',
-      imgURL: 'http://ionicframework.com/img/homepage/ionicview-icon_2x.png'
+      imgURL: 'http://plugcitarios.com/wp-content/uploads/2012/08/mamiferos-pamalat.jpg'
     }
   ];
 
@@ -44,14 +44,18 @@ angular.module('starter', ['ionic'])
   $scope.mostarItem = function(item) {
     var alertPopup = $ionicPopup.alert({
       title: 'Tarefa ' + item.titulo,
-      template: 'Descrição: ' + item.descricao + '</br>Data: ' + item.periodo + '</br><img ng-src="'+item.imgURL +'"/>'
+      template: 'Descrição: ' + item.descricao + '</br>Data: ' + item.periodo + '</br><img ng-src="'+item.imgURL +'" />'
     });
 
     alertPopup.then(function(res) {
-      console.log('Thank you for not eating my delicious ice cream cone');
+      console.log('Tarefa exibida');
     });
   };
 
+  $scope.moverItem = function(item, fromIndex, toIndex) {
+    $scope.items.splice(fromIndex, 1);
+    $scope.items.splice(toIndex, 0, item);
+  };
 
   $scope.removerTarefa = function(item) {
     $scope.items.splice($scope.items.indexOf(item), 1);
