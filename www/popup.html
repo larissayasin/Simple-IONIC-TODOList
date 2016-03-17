@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+
+<input type="text" placeholder="Titulo" ng-model="data.titulo">
+<input type="text" placeholder="Descricao" ng-model="data.descricao" ng-if="nivel>=1">
+<input type="date" placeholder="Data" ng-model="data.periodo" ng-if="nivel>=2">
+<input type="url" placeholder="URL de Imagem" ng-model="data.imgURL" ng-if="nivel>=3">
